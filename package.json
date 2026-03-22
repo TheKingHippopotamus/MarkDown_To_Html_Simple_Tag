@@ -1,6 +1,6 @@
 {
   "name": "md-spawn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browser-native <md-spawn> custom element: render Markdown from src or inline, secure by default.",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,7 +16,11 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "nexus-pngs/CEO.png",
+    "nexus-pngs/CTO.png",
+    "nexus-pngs/king-hippo.png",
+    "postinstall.mjs"
   ],
   "sideEffects": [
     "./dist/index.js"
@@ -26,15 +30,30 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "postinstall": "node ./postinstall.mjs",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
     "markdown",
+    "markdown-renderer",
+    "markdown-viewer",
+    "browser-native",
+    "browser",
+    "frontend",
+    "html",
+    "cdn",
+    "inline-markdown",
+    "lazy-loading",
+    "shadow-dom",
+    "dompurify",
+    "highlightjs",
     "web-components",
     "custom-element",
+    "custom-elements",
     "md-spawn"
   ],
   "license": "MIT",
+  "author": "KingHippo (https://github.com/TheKingHippopotamus)",
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/dompurify": "^3.0.5",
