@@ -39,6 +39,14 @@ Drop in one tag, point it at a Markdown file or paste inline content, and it ren
 - inline fallback when `src` fails
 - optional lazy loading and shadow DOM
 
+## Preview
+
+<div align="center">
+  <img src="example.png" alt="md-spawn quick-start snippet, markdown source, and rendered output preview" width="100%" />
+</div>
+
+See the quick-start snippet on the left, the Markdown source in the middle, and the rendered result on the right.
+
 ## Quick Start
 
 ### Option 1: CDN, No Install Required

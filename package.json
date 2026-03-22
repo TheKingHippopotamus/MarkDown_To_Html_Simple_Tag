@@ -17,6 +17,7 @@
   "files": [
     "dist",
     "README.md",
+    "example.png",
     "nexus-pngs/CEO.png",
     "nexus-pngs/CTO.png",
     "nexus-pngs/king-hippo.png",
