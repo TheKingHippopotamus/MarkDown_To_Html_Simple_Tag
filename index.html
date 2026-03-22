@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>md-spawn | GitHub Pages Docs Demo</title>
+    <meta
+      name="description"
+      content="Render the repository README and contributing guide on GitHub Pages with md-spawn loaded from unpkg."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top, hsla(278, 94%, 28%, 0.413), transparent 28rem),
+          linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+        color: hsl(220, 100%, 0%);
+      }
+
+      .shell {
+        width: min(1100px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 1rem 0 3rem;
+      }
+
+      .banner {
+        margin: 0 0 1rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.72);
+        color: #cbd5e1;
+        line-height: 1.55;
+        backdrop-filter: blur(10px);
+      }
+
+      .banner code {
+        padding: 0.15rem 0.35rem;
+        border-radius: 999px;
+        background: rgb(102, 1, 255);
+        color: #f8fafc;
+      }
+
+      .banner a {
+        color: rgb(102, 1, 255);
+      }
+
+      .docs-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .doc-panel {
+        padding: 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+
+      .doc-panel h2 {
+        margin: 0 0 1rem;
+        font-size: 1.1rem;
+      }
+
+      md-spawn {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <p class="banner">
+        GitHub Pages demo: this entrypoint loads both <code>README.md</code> and
+        <code>CONTRIBUTING.md</code> from the repo root and renders them with
+        <code>md-spawn</code> from unpkg. The root <code>.nojekyll</code> file keeps Pages from
+        transforming the Markdown source before the component fetches it.
+      </p>
+
+      <div class="docs-grid">
+        <section class="doc-panel" aria-labelledby="readme-heading">
+          <h2 id="readme-heading">README</h2>
+          <md-spawn src="./README.md">
+# md-spawn
+
+If you can read this fallback, GitHub Pages did not return the raw `README.md` file.
+
+Keep the root `.nojekyll` file in the repo so the markdown source is served directly.
+          </md-spawn>
+        </section>
+
+        <section class="doc-panel" aria-labelledby="contributing-heading">
+          <h2 id="contributing-heading">Contributing Guide</h2>
+          <md-spawn src="./CONTRIBUTING.md">
+# Contributing to md-spawn
+
+If you can read this fallback, GitHub Pages did not return the raw `CONTRIBUTING.md` file.
+
+Keep the root `.nojekyll` file in the repo so the markdown source is served directly.
+          </md-spawn>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/md-spawn/dist/index.js"></script>
+  </body>
+</html>
