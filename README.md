@@ -9,6 +9,7 @@
     <img src="https://img.shields.io/badge/web-component-f59e0b?style=for-the-badge" alt="web component" />
     <img src="https://img.shields.io/badge/typescript-ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript ready" />
     <img src="https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge" alt="MIT license" />
+    <img src="https://img.shields.io/github/actions/workflow/status/TheKingHippopotamus/MarkDown_To_Html_Simple_Tag/ci.yml?branch=main&style=for-the-badge&label=CI" alt="CI status" />
   </p>
   <p>
     <img src="https://img.shields.io/badge/cdn-ready-7c3aed?style=for-the-badge" alt="CDN ready" />
@@ -161,6 +162,32 @@ This content is **inline Markdown** with zero ceremony.
   One creator, one vision, product, design, and engineering moving together.
 </p>
 
+## CI / CD
+
+Three GitHub Actions workflows automate the full release cycle:
+
+| Workflow | Trigger | What it does |
+|----------|---------|--------------|
+| **CI** | Push / PR to `main` | Install, build, and test on Node 18, 20, 22 |
+| **Version Bump & Release** | Manual (Actions tab) | Bump `package.json` version (patch / minor / major), commit, tag, push, and create a GitHub Release |
+| **Publish to npm** | GitHub Release created | Run tests, build, and `npm publish` with provenance |
+
+### Release flow
+
+```
+Actions tab → "Version Bump & Release" → pick patch/minor/major
+  → package.json 1.0.1 → 1.0.2
+  → commit + tag + push to main
+  → GitHub Release v1.0.2 created automatically
+  → Publish workflow fires → npm gets v1.0.2
+```
+
+### Setup (one-time)
+
+1. Generate an **Automation** token at [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens).
+2. In your repo go to **Settings → Secrets and variables → Actions**.
+3. Add a secret named `NPM_TOKEN` with the token value.
+
 ## Local Demo
 
 ```bash
@@ -169,3 +196,21 @@ npx serve . -l 4173
 ```
 
 Open `http://127.0.0.1:4173/demo/index.html`.
+
+## Contributing
+
+Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) before opening a PR.
+
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Security
+
+To report a vulnerability, see [SECURITY.md](SECURITY.md). Please do **not** open a public issue for security reports.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a full version history.
+
+## License
+
+[MIT](LICENSE) &copy; [KingHippo](https://github.com/TheKingHippopotamus)
