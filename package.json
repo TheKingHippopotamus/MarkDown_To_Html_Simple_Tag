@@ -1,0 +1,52 @@
+{
+  "name": "md-spawn",
+  "version": "1.0.0",
+  "description": "Browser-native <md-spawn> custom element: render Markdown from src or inline, secure by default.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "./dist/index.js"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "markdown",
+    "web-components",
+    "custom-element",
+    "md-spawn"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/dompurify": "^3.0.5",
+    "jsdom": "^25.0.1",
+    "serve": "^14.2.4",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.2",
+    "highlight.js": "^11.11.0",
+    "marked": "^15.0.4"
+  }
+}

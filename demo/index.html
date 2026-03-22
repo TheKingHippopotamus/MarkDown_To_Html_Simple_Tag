@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MD-Spawn demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 920px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      h1.page {
+        font-size: 1.25rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="page">MD-Spawn demo — load <code>/dist/index.js</code> after the elements are in the DOM.</p>
+
+    <h2>Inline Markdown</h2>
+    <md-spawn>
+# Hello from inline
+
+A **bold** word and `code`.
+
+```js
+const x = 1;
+console.log(x);
+```
+    </md-spawn>
+
+    <h2>From file (<code>src</code>)</h2>
+    <md-spawn src="./sample.md"></md-spawn>
+
+    <h2>Lazy load (scroll down)</h2>
+    <div style="height: 120vh; border: 1px dashed #ccc; padding: 1rem; color: #666">
+      Scroll past this box to render the block below.
+    </div>
+    <md-spawn loading="lazy">
+# Lazy inline
+
+This content should appear after the element enters the viewport.
+    </md-spawn>
+
+    <h2>Shadow DOM</h2>
+    <md-spawn shadow>
+# Inside shadow root
+
+Theme is injected into the shadow tree.
+    </md-spawn>
+
+    <script type="module" src="/dist/index.js"></script>
+  </body>
+</html>
